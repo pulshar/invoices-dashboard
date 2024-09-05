@@ -12,7 +12,6 @@ export default async function InvoicesTable({
   currentPage: number;
 }) {
   const invoices = await fetchFilteredInvoices(query, currentPage);
-  console.log("iMage", invoices[0]);
 
   return (
     <div className="mt-6 flow-root">

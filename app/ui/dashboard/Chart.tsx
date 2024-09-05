@@ -1,5 +1,6 @@
 "use client";
 
+import { Revenue } from "@/app/lib/definitions";
 import {
   AreaChart,
   BarChart,
@@ -10,12 +11,14 @@ import {
   Subtitle,
 } from "@tremor/react";
 
-const valueFormatter = function (number) {
+const valueFormatter = function (number: number) {
   return "$ " + new Intl.NumberFormat("us").format(number).toString();
 };
 
-export function Chart({ revenue }) {
-  // console.log(revenue);
+type ChartProps = {
+  revenue: Revenue[];
+};
+export function Chart({ revenue }: ChartProps) {
   return (
     <BarChart
       style={{ height: "385px" }}
